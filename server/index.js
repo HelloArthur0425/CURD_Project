@@ -3,15 +3,15 @@ import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 import cors from 'cors';
 
-import postRoute from './route/post.js';
+import postRoute from './route/posts.js';
 
 const app = express();
-
-app.use('/post', postRoute);
 
 app.use(bodyParser.json({limit: "30mb", extended: true}));
 app.use(bodyParser.urlencoded({limit: "30mb", extended: true}));
 app.use(cors());
+
+app.use('/posts', postRoute);
 
 // MongoDB
 const CONNECTION_URL = 'mongodb+srv://root:passw0rd@cluster0.blly0.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
