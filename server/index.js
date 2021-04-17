@@ -15,7 +15,7 @@ app.use('/posts', postRoute);
 
 // MongoDB
 const CONNECTION_URL = 'mongodb+srv://root:passw0rd@cluster0.blly0.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT || 5000;
 
 mongoose.connect(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => app.listen(PORT, () => console.log(`Server running on port: ${PORT}`)))
